@@ -2,26 +2,10 @@
   <div class="page">
     <div class="page-title">
       <div class="page-title-text">Deep Learning</div>
-      <video
-        src="https://developers.google.com/machine-learning/crash-course/images/landing-hero-video.webm"
-      />
+      <img src="../assets/img/Index.png" />
     </div>
-    <HomeItem
-      :list="list"
-      title="Classical Deep Learning Network Model"
-      :descList="[
-        'The foundational courses cover machine learning fundamentals and core concepts.',
-        'We recommend taking them in the order below.'
-      ]"
-    />
-    <HomeItem
-      :list="applicationList"
-      title="Application"
-      :descList="[
-        'The foundational courses cover machine learning fundamentals and core concepts.',
-        'We recommend taking them in the order below.'
-      ]"
-    />
+    <HomeItem :list="list" title="Classical Deep Learning Network Model" />
+    <HomeItem :list="applicationList" title="Application" />
   </div>
 </template>
 <script setup>
@@ -74,25 +58,29 @@ const applicationList = [
     coverUrl: resolveImg('two/OpenAI.jpg'),
     title: 'OpenAI',
     desc: 'A brief introduction to machine learning.',
-    isNew: false
+    isNew: false,
+    linkUrl: 'https://platform.openai.com/overview'
   },
   {
     coverUrl: resolveImg('two/RunwayML.jpg'),
     title: 'RunwayML',
     desc: 'A brief introduction to machine learning.',
-    isNew: true
+    isNew: true,
+    linkUrl: 'https://app.runwayml.com/video-tools/teams/zhuoqunxue/ai-tools'
   },
   {
     coverUrl: resolveImg('two/stability.jpg'),
     title: 'stability',
     desc: 'A brief introduction to machine learning.',
-    isNew: false
+    isNew: false,
+    linkUrl: 'https://stability.ai'
   },
   {
     coverUrl: resolveImg('two/Teachable Machine.jpg'),
     title: 'Teachable Machine',
     desc: 'A brief introduction to machine learning.',
-    isNew: true
+    isNew: true,
+    linkUrl: 'https://teachablemachine.withgoogle.com'
   }
 ]
 </script>
@@ -116,7 +104,7 @@ const applicationList = [
       color: #fff;
       z-index: 999;
     }
-    video {
+    img {
       filter: brightness(50%);
       grid-column: 1 / -1;
       grid-row: 1 / -1;

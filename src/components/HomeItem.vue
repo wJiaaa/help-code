@@ -47,6 +47,9 @@ const goRoute = (item) => {
   if (item.key === 'cnn') {
     router.push({ path: '/explore', query: { isFromCnnClick: true } })
   }
+  if (['OpenAI', 'RunwayML', 'stability', 'Teachable Machine'].includes(item.title)) {
+    window.open(item.linkUrl)
+  }
 }
 </script>
 <style lang="less" scoped>

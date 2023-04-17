@@ -18,6 +18,7 @@ module.exports = {
     ecmaVersion: 'latest'
   },
   rules: {
-    'no-var': 2
+    'no-var': 2,
+    'vue/multi-word-component-names': 0
   }
 }
