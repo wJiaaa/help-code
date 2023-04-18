@@ -2,7 +2,7 @@
   <div class="page">
     <div class="page-title">
       <div class="page-title-text">Deep Learning</div>
-      <img src="../assets/img/Index.png" />
+      <img src="../assets/img/Index.gif" />
     </div>
     <HomeItem :list="list" title="Classical Deep Learning Network Model" />
     <HomeItem :list="applicationList" title="Application" />
@@ -18,38 +18,38 @@ const list = [
   {
     coverUrl: resolveImg('one/CNN.jpg'),
     title: 'CNN',
-    desc: 'A brief introduction to machine learning.',
+    desc: 'Simulates the convolution operation in biological neural networks to automatically extract hierarchical features from the input data.',
     isNew: true,
     key: 'cnn'
   },
   {
     coverUrl: resolveImg('one/Dot-product Self-Attention Networks.png'),
     title: 'Dot-product Self-Attention Networks',
-    desc: 'A hands-on course to explore the critical basics of machine learning.',
+    desc: 'Neural network structure for point product computation of self-attentive weights, capable of capturing long-range dependencies within the input sequence.',
     isNew: false
   },
   {
     coverUrl: resolveImg('one/GANs.jpg'),
     title: 'GANs',
-    desc: 'A brief introduction to machine learning.',
+    desc: 'Adversarial learning by training the generator and discriminator simultaneously, enabling the generator to produce realistic data samples.',
     isNew: true
   },
   {
     coverUrl: resolveImg('one/RBFNs.png'),
     title: 'RBFNs',
-    desc: 'A hands-on course to explore the critical basics of machine learning.',
+    desc: 'Enables nonlinear mapping and approximation in the input space by using radial basis functions as activation functions.',
     isNew: false
   },
   {
     coverUrl: resolveImg('one/ResNets.jpg'),
     title: 'ResNets',
-    desc: 'A brief introduction to machine learning.',
+    desc: 'Mitigate the gradient disappearance problem by introducing a residual module to enable deeper model training.',
     isNew: true
   },
   {
     coverUrl: resolveImg('one/RNNs.jpg'),
     title: 'RNNs',
-    desc: 'A hands-on course to explore the critical basics of machine learning.',
+    desc: 'By introducing circular connections in the network structure, the model is able to capture temporal information and long-range dependencies.',
     isNew: false
   }
 ]
@@ -57,28 +57,24 @@ const applicationList = [
   {
     coverUrl: resolveImg('two/OpenAI.jpg'),
     title: 'OpenAI',
-    desc: 'A brief introduction to machine learning.',
     isNew: false,
     linkUrl: 'https://platform.openai.com/overview'
   },
   {
     coverUrl: resolveImg('two/RunwayML.jpg'),
     title: 'RunwayML',
-    desc: 'A brief introduction to machine learning.',
     isNew: true,
     linkUrl: 'https://app.runwayml.com/video-tools/teams/zhuoqunxue/ai-tools'
   },
   {
     coverUrl: resolveImg('two/stability.jpg'),
     title: 'stability',
-    desc: 'A brief introduction to machine learning.',
     isNew: false,
     linkUrl: 'https://stability.ai'
   },
   {
     coverUrl: resolveImg('two/Teachable Machine.jpg'),
     title: 'Teachable Machine',
-    desc: 'A brief introduction to machine learning.',
     isNew: true,
     linkUrl: 'https://teachablemachine.withgoogle.com'
   }

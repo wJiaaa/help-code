@@ -49,21 +49,12 @@
                   data through a convolution operation, creating feature maps that highlight the
                   learned features.
                 </div>
-                <div class="mt20">
+                <div class="mt20 mb20">
                   <span class="stong"> Activation function </span>: Introduces non-linearity into
                   the network, allowing it to learn complex patterns. The most commonly used
                   activation function is the Rectified Linear Unit (ReLU).
                 </div>
-                <div class="mt20">
-                  <span class="stong"> Pooling layer</span>: Reduces the spatial dimensions of the
-                  feature maps, decreasing computational complexity and improving the network's
-                  ability to recognize patterns at different scales.
-                </div>
-                <div class="mt20 mb20">
-                  <span class="stong"> Fully connected layer </span>: Takes the output of the
-                  previous layers, flattens it into a one-dimensional vector, and performs
-                  classification or regression tasks to produce the final output of the network.
-                </div>
+                <img src="../assets/img/inToCnn.png" alt="" />
               </div>
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
@@ -98,53 +89,67 @@
               </div>
             </div>
             <div v-if="activeItem === 21">
-              <div>
-                Convolutional Neural Networks (CNNs) consist of several components, or layers, that
-                work together to process grid-like data (e.g., images) and extract useful features
-                for tasks such as image recognition, object detection, and segmentation. The main
-                components of a CNN are:
+              <div style="font-weight: 700; font-size: 30px">Basic Components</div>
+              <div class="mt40">
+                <span class="stong">1. Input Layer</span>: The input layer is the first layer in a
+                Convolutional Neural Network (CNN) that takes the raw data as input. In image
+                recognition tasks, for example, the input layer receives an image represented as an
+                array of pixel values. Typically, images are represented as a 3D array with
+                dimensions corresponding to the height, width, and the color channels (red, green,
+                blue). Example: For a color image of 28x28 pixels, the input layer would have
+                28x28x3 = 2352 neurons.
               </div>
               <div class="mt40">
-                <span class="stong">Convolutional layer</span>: The primary component of a CNN, the
-                convolutional layer applies a set of filters (also known as kernels) to the input
-                data through a convolution operation. Each filter is responsible for learning a
-                specific feature or pattern in the input data. The output of the convolution
-                operation is a set of feature maps, which highlight the features learned by the
-                filters.
+                <span class="stong">2. Hidden Layers</span>: Hidden layers in a CNN are the layers
+                between the input and output layers, responsible for processing and learning
+                features from the input data. A typical CNN has multiple hidden layers, which can
+                include convolutional layers, pooling layers, and fully connected layers.
               </div>
               <div class="mt40">
-                <span class="stong">Activation function</span>: After the convolution operation, an
-                activation function is applied to introduce non-linearity into the network. The most
-                commonly used activation function in CNNs is the Rectified Linear Unit (ReLU), which
-                replaces all negative values in the feature maps with zero. Other activation
-                functions, such as sigmoid and tanh, can also be used.
+                <span class="stong">3. Output Layer</span>: The output layer is the last layer of a
+                CNN, which produces the final predictions. The number of neurons in the output layer
+                depends on the task being performed. For classification tasks, the output layer
+                typically has as many neurons as the number of classes, and a softmax activation
+                function is applied to provide probabilities for each class. Example: In a 10-class
+                image classification problem, the output layer would have 10 neurons.
+              </div>
+              <img src="../assets/img/3.png" alt="" />
+              <div class="mt40" style="font-weight: 700; font-size: 30px">
+                More advanced details:
               </div>
               <div class="mt40">
-                <span class="stong">Pooling layer</span>: This layer reduces the spatial dimensions
-                (width and height) of the feature maps, which helps decrease the computational
-                complexity of the network and improve its ability to recognize patterns at different
-                scales. Common pooling operations include max pooling (retaining the maximum value
-                within a local region of the feature map) and average pooling (calculating the
-                average value within a local region of the feature map).
+                <span class="stong">4. Convolution Kernels and Channels</span>: Convolution kernels,
+                or filters, are small matrices applied to the input data or feature maps in a
+                sliding window fashion, resulting in feature maps. They are responsible for
+                detecting features like edges, corners, and textures within the input data. Channels
+                refer to the depth of input data or feature maps. For example, a color image has 3
+                channels (red, green, and blue), while the output feature maps after a convolution
+                operation may have multiple channels, each representing a different learned feature.
               </div>
+              <img src="../assets/img/4.png" alt="" />
               <div class="mt40">
-                <span class="stong">Batch normalization (optional)</span>: This component is used to
-                improve the stability and performance of CNNs by normalizing the feature maps across
-                the batch. Batch normalization reduces internal covariate shift, allowing for faster
-                convergence and improved generalization.
+                <span class="stong">5. Back-propagation and Weights</span>: Back-propagation is the
+                learning algorithm used to train neural networks, including CNNs, by minimizing the
+                error between the predicted and true output. During training, the network's weights
+                are adjusted iteratively using the gradient of the loss function with respect to
+                each weight. The gradients are calculated using the chain rule and are propagated
+                backward from the output layer to the input layer, updating the weights and biases
+                to minimize the loss. Here is a link of a simulator of Back-propagation in NN for
+                you to find Back-propagation changes weights:
+                <a href="https://www.mladdict.com/neural-network-simulator">
+                  Neural Network Simulator (mladdict.com)</a
+                >
               </div>
+              <img src="../assets/img/5.png" alt="" />
               <div class="mt40">
-                <span class="stong">Dropout (optional)</span>: Dropout is a regularization technique
-                used to prevent overfitting in neural networks. It works by randomly "dropping out"
-                a fraction of neurons during training, which forces the network to learn more robust
-                features.
-              </div>
-
-              <div class="mt40">
-                <span class="stong">Fully connected layer</span>: The final layers of a CNN are
-                usually one or more fully connected layers. These layers perform classification or
-                regression tasks by taking the output of the previous layers (flattened into a
-                one-dimensional vector) and producing the final output of the network.
+                <span class="stong">Activation Function</span>: Activation functions are non-linear
+                functions applied to the output of a neuron or layer in a CNN. They introduce
+                non-linearity into the network, allowing it to learn complex patterns and
+                relationships in the input data. Common activation functions include Rectified
+                Linear Unit (ReLU), sigmoid, and hyperbolic tangent (tanh). For example, ReLU is
+                defined as f(x) = max(0, x), where x is the input to the function. Activation
+                functions are applied element-wise to the output of the convolution or fully
+                connected layers.
               </div>
               <div class="mt40 mb20">
                 <span class="stong">Output layer</span>: The last fully connected layer is connected
@@ -155,32 +160,25 @@
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
               <div class="mb10">
-                <a href="https://www.tensorflow.org/tutorials/images/cnn"
-                  >TensorFlow documentation: Introduction to Convolutional Neural Networks
-                </a>
-              </div>
-              <div class="mb30">
                 <a
-                  href="https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53"
-                  >A Comprehensive Guide to Convolutional Neural Networks
+                  href="https://www.analyticsvidhya.com/blog/2021/05/convolutional-neural-networks-cnn/"
+                  >CNN
                 </a>
               </div>
-              <div class="mb10">Paper:</div>
-              <div>
-                <a href="https://www.mitpressjournals.org/doi/pdf/10.1162/neco.1989.1.4.541"
-                  >Backpropagation applied to handwritten zip code recognition</a
+              <div class="mb10">
+                <a href="https://www.youtube.com/watch?v=tIeHLnjs5U8"
+                  >Back-propagation introduction
+                </a>
+              </div>
+              <div class="mb10">
+                <a
+                  href="https://machinelearningmastery.com/choose-an-activation-function-for-deep-learning"
+                  >Activation Function</a
                 >
               </div>
-              <div class="mt20">
-                <a href="https://arxiv.org/pdf/1312.6229.pdf"
-                  >IarX OverFeat: Integrated recognition, localization and detection using
-                  convolutional networks.</a
-                >
-              </div>
-              <div class="mt20">
-                <a href="https://arxiv.org/pdf/1412.6806.pdf"
-                  >Triving for simplicity: The all convolutional net.</a
-                >
+              <div class="mt10">Paper:</div>
+              <div class="mt10">
+                <a href="https://ieeexplore.ieee.org/document/9422066">Activation Function</a>
               </div>
             </div>
             <div v-if="activeItem === 31">
@@ -241,6 +239,7 @@
                 different improvements and enhancements. These architectures have been tailored for
                 specific tasks and have influenced the development of new CNN models.
               </div>
+              <img src="../assets/img/cnnarch.png" alt="" style="height: 800px; width: auto" />
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
               <div class="mb30">
@@ -249,7 +248,7 @@
                   >An Overview of ResNet and its Variants
                 </a>
               </div>
-              <div class="mb20">Paper:</div>
+              <div class="mb10">Paper:</div>
               <div>
                 <a href="https://arxiv.org/pdf/1409.4842.pdf">Going deeper with convolutions</a>
               </div>
@@ -305,6 +304,7 @@
                 them for specific tasks, which can lead to faster convergence and better
                 performance.
               </div>
+              <img src="../assets/img/model.png" alt="" style="height: 800px; width: auto" />
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
               <div class="mb10">
@@ -321,7 +321,7 @@
                   >Hyperparameter Tuning in Deep Learning</a
                 >
               </div>
-              <div class="mb20">Paper:</div>
+              <div class="mb10">Paper:</div>
               <div class="mb10">
                 <a href="https://jmlr.org/papers/v13/bergstra12a.html"
                   >Random search for hyper-parameter optimization.
@@ -414,7 +414,7 @@
                   >Transfer Learning using pre-trained models in Keras</a
                 >
               </div>
-              <div class="mb20">Paper:</div>
+              <div class="mb10">Paper:</div>
               <div class="mb10">
                 <a
                   href="https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks.pdf"
@@ -435,8 +435,10 @@
                 <span class="stong">Objective</span>: Learn to train and test a CNN model using a
                 dataset.
               </div>
-              <div class="mt40"><span class="stong">Instructions</span>:</div>
               <div class="mt40">
+                <span style="font-weight: 700; font-size: 30px">Instructions</span>:
+              </div>
+              <div class="mt20">
                 <span class="stong">1. Choose a dataset</span>: Select a suitable dataset for image
                 classification, such as CIFAR-10, CIFAR-100, or a custom dataset. Divide the dataset
                 into training, validation, and testing sets.
@@ -466,11 +468,12 @@
                 preprocessed dataset. Monitor the training and validation losses and accuracy to
                 ensure proper convergence and prevent overfitting.
               </div>
-              <div lass="mt40 mb20">
+              <div class="mt40 mb20">
                 <span class="stong">7. Test the model</span>: Evaluate the trained model on the test
                 set and analyze the results. Calculate metrics such as accuracy, precision, recall,
                 and F1-score.
               </div>
+              <img src="../assets/img/train.png" alt="" style="height: 400px; width: auto" />
             </div>
             <div v-if="activeItem === 8">
               <div>
@@ -502,6 +505,12 @@
                 new, unlabeled images to see how well it can recognize faces in real-world
                 situations. You can use OpenCV or other libraries to detect faces in images and then
                 apply the trained CNN model for recognition.
+              </div>
+              <img src="../assets/img/facial.png" alt="" style="height: 600px; width: auto" />
+              <div class="mt40">
+                <a href="https://teachablemachine.withgoogle.com/train/image"
+                  >Try to build and train your own recognition model：</a
+                >
               </div>
             </div>
           </template>
@@ -567,19 +576,19 @@ import QuestionItem from '../components/QuestionItem.vue'
 const activeItem = ref('Prerequisites')
 const nav = ref(null)
 const titleObj = {
-  11: { title: 'Introduction to CNN', readTime: 2 },
+  11: { title: 'Introduction to CNN', readTime: 10 },
   12: { title: 'Introduction to CNN:Check Your Understanding', readTime: 5 },
-  21: { title: 'Components of CNN', readTime: 5 },
-  22: { title: 'Components of CNN:Check Your Understanding', readTime: 2 },
-  31: { title: 'CNN architecture', readTime: 2 },
-  32: { title: 'CNN architecture:Check Your Understanding', readTime: 2 },
-  41: { title: 'Model and hyperparameters', readTime: 2 },
-  42: { title: 'Model and hyperparameters:Check Your Understanding', readTime: 2 },
+  21: { title: 'Components of CNN', readTime: 17 },
+  22: { title: 'Components of CNN:Check Your Understanding', readTime: 3 },
+  31: { title: 'CNN architecture', readTime: 20 },
+  32: { title: 'CNN architecture:Check Your Understanding', readTime: 5 },
+  41: { title: 'Model and hyperparameters', readTime: 40 },
+  42: { title: 'Model and hyperparameters:Check Your Understanding', readTime: 20 },
   51: { title: 'Design and Customize', readTime: 2 },
   52: { title: 'Design and Customize:Check Your Understanding', readTime: 2 },
-  6: { title: 'MCQs of Concepts', readTime: 4 },
-  7: { title: 'Training and Testing', readTime: 4 },
-  8: { title: 'Facial recognition', readTime: 4 }
+  6: { title: 'MCQs of Concepts', readTime: 15 },
+  7: { title: 'Training and Testing', readTime: 20 },
+  8: { title: 'Facial recognition', readTime: 25 }
 }
 
 const answer = {
