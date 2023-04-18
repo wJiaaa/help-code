@@ -54,7 +54,7 @@
                   the network, allowing it to learn complex patterns. The most commonly used
                   activation function is the Rectified Linear Unit (ReLU).
                 </div>
-                <img style="width: 100%" src="../assets/img/Introduction to CNNs.gif" alt="" />
+                <img style="width: 100%" src="../assets/img/IntroductiontoCNNs.gif" alt="" />
               </div>
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
@@ -113,7 +113,7 @@
                 function is applied to provide probabilities for each class. Example: In a 10-class
                 image classification problem, the output layer would have 10 neurons.
               </div>
-              <img src="../assets/img/Output Layer.png" alt="" />
+              <img src="../assets/img/OutputLayer.png" alt="" />
               <div class="mt40" style="font-weight: 700; font-size: 30px">
                 More advanced details:
               </div>
@@ -128,7 +128,7 @@
               </div>
               <img
                 style="width: 100%"
-                src="../assets/img/Convolution Kernels and Channels.gif"
+                src="../assets/img/ConvolutionKernelsAndChannels.gif"
                 alt=""
               />
               <div class="mt40">
@@ -146,7 +146,7 @@
               </div>
               <img
                 class="mt20"
-                src="../assets/img/Back-propagation and Weights.gif"
+                src="../assets/img/BackPropagationAndWeights.gif"
                 style="width: 100%"
                 alt=""
               />
@@ -248,7 +248,7 @@
                 different improvements and enhancements. These architectures have been tailored for
                 specific tasks and have influenced the development of new CNN models.
               </div>
-              <img src="../assets/img/CNN architecture.gif" alt="" style="width: 100%" />
+              <img src="../assets/img/CNNArchitecture.gif" alt="" style="width: 100%" />
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
               <div class="mb30">
@@ -313,7 +313,7 @@
                 them for specific tasks, which can lead to faster convergence and better
                 performance.
               </div>
-              <img src="../assets/img/Model and hyperparameters.gif" alt="" style="width: 100%" />
+              <img src="../assets/img/Modelandhyperparameters.gif" alt="" style="width: 100%" />
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
               <div class="mb10">
@@ -483,8 +483,8 @@
                 and F1-score.
               </div>
               <div style="display: flex">
-                <img src="../assets/img/Training and Testing1.gif" alt="" style="width: 50%" />
-                <img src="../assets/img/Training and Testing2.gif" alt="" style="width: 50%" />
+                <img src="../assets/img/TrainingandTesting1.gif" alt="" style="width: 50%" />
+                <img src="../assets/img/TrainingandTesting2.gif" alt="" style="width: 50%" />
               </div>
             </div>
             <div v-if="activeItem === 8">
@@ -519,7 +519,7 @@
                 apply the trained CNN model for recognition.
               </div>
               <img
-                src="../assets/img/Facial recognition.gif"
+                src="../assets/img/Facialrecognition.gif"
                 alt=""
                 style="height: 600px; width: auto"
               />

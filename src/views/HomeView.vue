@@ -2,7 +2,7 @@
   <div class="page">
     <div class="page-title">
       <div class="page-title-text">Deep Learning</div>
-      <img src="../assets/img/deepLearning title.gif" />
+      <img src="../assets/img/deepLearningtitle.gif" />
     </div>
     <HomeItem :list="list" title="Classical Deep Learning Network Model" />
     <HomeItem :list="applicationList" title="Application" />
