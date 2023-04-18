@@ -113,7 +113,7 @@
                 function is applied to provide probabilities for each class. Example: In a 10-class
                 image classification problem, the output layer would have 10 neurons.
               </div>
-              <img src="../assets/img/OutputLayer.png" alt="" />
+              <img style="width: 100%" src="../assets/img/OutputLayer.png" alt="" />
               <div class="mt40" style="font-weight: 700; font-size: 30px">
                 More advanced details:
               </div>
@@ -518,11 +518,7 @@
                 situations. You can use OpenCV or other libraries to detect faces in images and then
                 apply the trained CNN model for recognition.
               </div>
-              <img
-                src="../assets/img/Facialrecognition.gif"
-                alt=""
-                style="height: 600px; width: auto"
-              />
+              <img src="../assets/img/Facialrecognition.gif" alt="" style="width: 100%" />
               <div class="mt40">
                 <a href="https://teachablemachine.withgoogle.com/train/image"
                   >Try to build and train your own recognition model：</a
