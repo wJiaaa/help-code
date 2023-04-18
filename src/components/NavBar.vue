@@ -105,7 +105,7 @@ import { ref } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
-const emits = defineEmits(['update:activeItem'])
+const emits = defineEmits(['update:activeItem', 'setScrollTo'])
 
 const cnnList = ref([
   {
@@ -186,11 +186,13 @@ const clickInfoItem = (infoItem) => {
       show: flag
     }
   })
+  emits('setScrollTo')
   emits('update:activeItem', infoItem.id)
 }
 
 const changeActiveItem = (item) => {
   activeItem.value = 'Prerequisites'
+  emits('setScrollTo')
   emits('update:activeItem', item || activeItem.value)
 }
 

@@ -1,8 +1,8 @@
 <template>
   <div class="main-page">
-    <NavBar v-model:activeItem="activeItem" ref="nav" class="aside" />
+    <NavBar v-model:activeItem="activeItem" @setScrollTo="setScrollTo" ref="nav" class="aside" />
     <div class="page-info">
-      <div class="container">
+      <div class="container" ref="main">
         <div class="main">
           <div v-if="activeItem === 'Prerequisites'">
             <Prerequisites />
@@ -54,7 +54,7 @@
                   the network, allowing it to learn complex patterns. The most commonly used
                   activation function is the Rectified Linear Unit (ReLU).
                 </div>
-                <img src="../assets/img/inToCnn.png" alt="" />
+                <img style="width: 100%" src="../assets/img/Introduction to CNNs.gif" alt="" />
               </div>
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
@@ -113,7 +113,7 @@
                 function is applied to provide probabilities for each class. Example: In a 10-class
                 image classification problem, the output layer would have 10 neurons.
               </div>
-              <img src="../assets/img/3.png" alt="" />
+              <img src="../assets/img/Output Layer.png" alt="" />
               <div class="mt40" style="font-weight: 700; font-size: 30px">
                 More advanced details:
               </div>
@@ -126,7 +126,11 @@
                 channels (red, green, and blue), while the output feature maps after a convolution
                 operation may have multiple channels, each representing a different learned feature.
               </div>
-              <img src="../assets/img/4.png" alt="" />
+              <img
+                style="width: 100%"
+                src="../assets/img/Convolution Kernels and Channels.gif"
+                alt=""
+              />
               <div class="mt40">
                 <span class="stong">5. Back-propagation and Weights</span>: Back-propagation is the
                 learning algorithm used to train neural networks, including CNNs, by minimizing the
@@ -140,7 +144,12 @@
                   Neural Network Simulator (mladdict.com)</a
                 >
               </div>
-              <img src="../assets/img/5.png" alt="" />
+              <img
+                class="mt20"
+                src="../assets/img/Back-propagation and Weights.gif"
+                style="width: 100%"
+                alt=""
+              />
               <div class="mt40">
                 <span class="stong">Activation Function</span>: Activation functions are non-linear
                 functions applied to the output of a neuron or layer in a CNN. They introduce
@@ -239,7 +248,7 @@
                 different improvements and enhancements. These architectures have been tailored for
                 specific tasks and have influenced the development of new CNN models.
               </div>
-              <img src="../assets/img/cnnarch.png" alt="" style="height: 800px; width: auto" />
+              <img src="../assets/img/CNN architecture.gif" alt="" style="width: 100%" />
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
               <div class="mb30">
@@ -304,7 +313,7 @@
                 them for specific tasks, which can lead to faster convergence and better
                 performance.
               </div>
-              <img src="../assets/img/model.png" alt="" style="height: 800px; width: auto" />
+              <img src="../assets/img/Model and hyperparameters.gif" alt="" style="width: 100%" />
               <div class="mt40 stong mb20">Related Links</div>
               <div class="mb10">Websites:</div>
               <div class="mb10">
@@ -473,7 +482,10 @@
                 set and analyze the results. Calculate metrics such as accuracy, precision, recall,
                 and F1-score.
               </div>
-              <img src="../assets/img/train.png" alt="" style="height: 400px; width: auto" />
+              <div style="display: flex">
+                <img src="../assets/img/Training and Testing1.gif" alt="" style="width: 50%" />
+                <img src="../assets/img/Training and Testing2.gif" alt="" style="width: 50%" />
+              </div>
             </div>
             <div v-if="activeItem === 8">
               <div>
@@ -506,7 +518,11 @@
                 situations. You can use OpenCV or other libraries to detect faces in images and then
                 apply the trained CNN model for recognition.
               </div>
-              <img src="../assets/img/facial.png" alt="" style="height: 600px; width: auto" />
+              <img
+                src="../assets/img/Facial recognition.gif"
+                alt=""
+                style="height: 600px; width: auto"
+              />
               <div class="mt40">
                 <a href="https://teachablemachine.withgoogle.com/train/image"
                   >Try to build and train your own recognition model：</a
@@ -520,7 +536,7 @@
               <div
                 v-if="activeItem !== 11"
                 style="display: flex; align-items: flex-end; cursor: pointer"
-                @click="previouos"
+                @click="clickNextOrPre(false)"
                 class="previouos"
               >
                 <div style="margin-bottom: -5px">
@@ -546,7 +562,7 @@
             <div
               v-if="activeItem !== 8"
               style="display: flex; align-items: flex-end; cursor: pointer"
-              @click="next"
+              @click="clickNextOrPre(true)"
               class="next"
             >
               <div style="margin-right: 15px">
@@ -575,6 +591,7 @@ import Prerequisites from '../components/Prerequisites.vue'
 import QuestionItem from '../components/QuestionItem.vue'
 const activeItem = ref('Prerequisites')
 const nav = ref(null)
+const main = ref(null)
 const titleObj = {
   11: { title: 'Introduction to CNN', readTime: 10 },
   12: { title: 'Introduction to CNN:Check Your Understanding', readTime: 5 },
@@ -826,13 +843,16 @@ const answer = {
 }
 const list = [11, 12, 21, 22, 31, 32, 41, 42, 51, 52, 6, 7, 8]
 
-const previouos = () => {
+/**
+ * @Description isNext
+ */
+const clickNextOrPre = (isNext) => {
   const index = list.findIndex((item) => item === activeItem.value)
-  nav.value.clickInfoItem({ id: list[index - 1] })
+  nav.value.clickInfoItem({ id: isNext ? list[index + 1] : list[index - 1] })
+  setScrollTo()
 }
-const next = () => {
-  const index = list.findIndex((item) => item === activeItem.value)
-  nav.value.clickInfoItem({ id: list[index + 1] })
+const setScrollTo = () => {
+  main.value.scrollTo(0, 0)
 }
 const getTitle = (isNext) => {
   const index = list.findIndex((item) => item === activeItem.value) + (isNext ? 1 : -1)
